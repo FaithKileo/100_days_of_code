@@ -4,8 +4,32 @@ import random
 import time
 import requests
 
+# importing twilio - Make sure to install twilio with pip install twilio
+from twilio.rest import Client
+
+# initialize a twilio client
+client = Client("AC7580b24a06fffa8ca4d762c5c9053901", "86dd6314aa511821ebaf83227dcad537")
+
+
 # functions
 def send():
+   
+
+    def jack_send_sms(to, msg: str):
+    
+        try:
+            for t in to.split(","):
+                message = client.messages \
+                            .create(
+                                body=msg,
+                                from_='+12182858596',
+                                to=t.strip()
+                            )
+                print(f"Sending sms to "+t)
+        except:
+            return "send failed"
+        
+
     def send_msg():
         message = textarea.get(1.0, END)
         number = numberfield.get()
