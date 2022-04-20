@@ -4,7 +4,7 @@ import requests
 from twilio.rest import Client
 
 # initialize a twilio client
-client = Client("AC7580b24a06fffa8ca4d762c5c9053901", "86dd6314aa511821ebaf83227dcad537")
+client = Client("AC7580b24a06fffa8ca4d762c5c9053901", "c975a5ce350454548a4bfb07464da76b")
 
 def jack_send_sms(to, msg: str):
     try:
